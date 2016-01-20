@@ -1,0 +1,118 @@
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	@include clearfix;
+	background-color: #4D4D4D;
+	border-bottom: 1px solid #6D6D6A;
+	//box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	z-index: 1;
+}
+
+.site-nav{
+	@include clearfix;
+	padding: 2em 0 1em 0;
+	.navbar-brand {
+		float: right;
+		padding: 0 2em;
+		i {
+			font-size: 3em;
+			color: #fff;
+		}
+	}
+	.nav-links {
+		line-height: 3em;
+		//text-align: center;
+		a {
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0 1em;
+			color: #FFFFFF;
+			font-weight: bold;
+			
+			&:hover {
+				color: #FC8E2E;
+				//color: #F93D0F;
+				//color: #FFFFFF;
+			}
+		}
+	}
+}
+
+.mobile-menu {
+	@include media($medium-screen) {
+		display: none;
+	}
+}
+
+
+.container.module {
+	padding: 2.5em 0;
+}
+.hero{
+	@include media($container-mobile_only) {
+    	@include fullbleed;
+  	}
+  	// uncomment this properties for full-bleed background
+  	background-image: url('../images/rainbowpattern.jpg');
+  	//background-position: top;
+  	//background-repeat: no-repeat;
+  	//
+
+
+
+  	background-size: cover;
+  	//
+  	padding: 7em 0 3em 0;
+	background-color: #4D4D4D;
+}
+.hero-inner {
+  	width: 100%;
+  	height: 65vh;
+  	border: none;
+  	//
+  	@include outer-container;
+  	@include clearfix;
+	margin: auto;
+	padding: 4em;
+	text-align: center;
+	color: #FFFFFF;
+	h2{
+  	//padding-top: 6.5em;
+  	font-size: 1.2em;
+  	color: #989894;
+  }
+  h1{
+  	font-size: 3em;
+  }
+  p {
+  	margin: 0 auto;
+  	padding: 0 2.5em 2.5em;
+  	font-size: 1.5em;
+  }
+  button{
+  	@include bbb-flat-style(white, #F93D0F);
+  	@include bbb-size(3);
+  	font-size: 1.1em;
+  }
+}
+
+.site-slider{
+
+	@include media($container-mobile_only) {
+    	@include fullbleed;
+  	}
+
+  	background-color: #FC8E2E;
+  	.royalSlider {
+  		margin: 0 auto;
+  	}
+}
+
+.site-footer{
+	@include media($container-mobile_only) {
+    	@include fullbleed;
+  	}
+  	 background: #EDEDED;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "ideastudio",
+  "version": "0.0.0",
+  "authors": [
+    "Omar Fonseca <omar.a.fonseca@gmail.com>"
+  ],
+  "description": "my set of tools",
+  "main": "",
+  "moduleType": [],
+  "dependencies": {
+     "jquery": "2.1.4",
+     "jqueryeasing": "https://github.com/gdsmith/jquery.easing.git",
+     "bourbon": "https://github.com/thoughtbot/bourbon.git#4.2.5",
+     "neat": "https://github.com/thoughtbot/neat.git#1.7.2",
+     "bitters": "https://github.com/thoughtbot/bitters.git#1.2.0",
+     "fastclick": "https://github.com/ftlabs/fastclick.git#~1.0.6",
+     "responsiveimages.js": "https://github.com/kvendrik/responsive-images.js.git",
+     "gsap": "git://github.com/greensock/GreenSock-JS.git",
+     "ScrollMagic": "git://github.com/janpaepke/ScrollMagic.git",
+     "simplbox": "git://github.com/Dendrochronologyy/SimplBox.git",
+     "smooth-scroll.js": "git://github.com/cferdinandi/smooth-scroll.git"
+   },
+  "license": "MIT",
+  "homepage": "ideastudio.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

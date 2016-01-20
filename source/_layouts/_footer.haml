@@ -1,0 +1,20 @@
+%footer.footer-2{ :role => 'contentinfo'}
+  %ul
+    - ['About','Contact','Products'].each do |menu|
+      %li
+        %a{:href => 'javascript:void(0)'}
+          #{menu}
+
+  .footer-secondary-links
+    %ul
+      - ['Terms and Conditions','Privacy Policy'].each do |menu|
+        %li
+          %a{:href => "javascript:void(0)"}
+            #{menu}
+
+  %ul.footer-nosocial
+    /%a{:href => "javascript:void(0)"}
+    - data.settings.services.each do |service_name, service_link|
+      %li
+        = link_to  service_name, service_link
+      /%img{:src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png', :alt => 'YouTube'}
