@@ -56,7 +56,7 @@ $container-super-narrow    : 45em; // 720px
 // Let the container span edge-to-edge.
 // -------------------------------------------------------------------
 
-@mixin fullbleed($gutter: 3em) {
+@mixin fullbleed($gutter: 0em) {
   max-width: none;
   width: -webkit-calc(100% + #{$gutter});
   width: calc(100% + #{$gutter});

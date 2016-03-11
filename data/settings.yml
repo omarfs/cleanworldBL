@@ -10,8 +10,8 @@ services:
   linkedin: 'http://linkedin.com/######'
   twitter: 'http://twitter.com/######'
   google: 'https://plus.google.com/#####################?rel=author'
+  facebook: 'https://www.facebook.com/#######'
 
 related:
   blog: 'http://blog.##########.org'
   company: 'http://www.##########.com/'
-

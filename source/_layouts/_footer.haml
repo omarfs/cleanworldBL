@@ -1,20 +1,18 @@
-%footer.footer-2{ :role => 'contentinfo'}
-  %ul
-    - ['About','Contact','Products'].each do |menu|
-      %li
-        %a{:href => 'javascript:void(0)'}
-          #{menu}
-
-  .footer-secondary-links
-    %ul
-      - ['Terms and Conditions','Privacy Policy'].each do |menu|
-        %li
-          %a{:href => "javascript:void(0)"}
-            #{menu}
-
-  %ul.footer-nosocial
-    /%a{:href => "javascript:void(0)"}
-    - data.settings.services.each do |service_name, service_link|
-      %li
-        = link_to  service_name, service_link
-      /%img{:src => 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png', :alt => 'YouTube'}
+%footer.site-footer{ :role => 'contentinfo'}
+  .footer-container
+    .footer-primary-links
+      %ul.site-links
+        - ['About','Services', 'Contact'].each do |menu|
+          %li
+            %a{:href => 'javascript:void(0)'}
+              %span=menu
+    .footer-social
+      %ul.social-icons
+        - data.settings.services.each do |service_name, service_link|
+          %li
+            = link_to service_link do
+              %span=service_name
+              %i{:class => "fa fa-#{service_name} fa-fw"}
+    .footer-legal
+      %p
+        &copy; #{Time.now.year.to_s} CWBL Limited | All Rights Reserved.

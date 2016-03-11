@@ -1,0 +1,43 @@
+%section.contact
+  .content
+    %header
+      .anim-content
+        %h1 Contact us
+        %p Thinking of a ...
+    .contact-form
+      %h2 Service Inquiry
+      /
+        %form{:"accept-charset"=>"UTF-8"}
+          %fieldset
+            %div
+              %label
+                Your name
+                %abbr.req{:title=>"required"} *
+              %input{:"type"=>"text", :name=>"name"}
+            %div
+              %label
+                Your email
+                %abbr.req{:title=>"required"} *
+              %input{:"type"=>"email", :name=>"email"}
+            %div
+              %label
+                Your telephone
+                %abbr.req{:title=>"required"} *
+              %input{:"type"=>"text", :name=>"telephone"}
+      = form_tag '//formspree.io/omar.a.fonseca@gmail.com', :class => 'contact-form' do
+        = error_messages_for nil
+        = field_set_tag do
+          = hidden_field_tag :session_id, :value => "__secret__"
+          = label_tag :name
+          = text_field_tag :name
+          = label_tag :email
+          = email_field_tag :email
+          = label_tag :telephone
+          = telephone_field_tag :telephone
+          = label_tag :zip
+          = number_field_tag :zip_code, :pattern => /[0-9]{5}/
+          = label_tag  :service
+          = select_tag :service, :options => ['Residential', 'Commercial']
+          %div
+            = label_tag :comments
+            = text_field_tag :comments, :maxlength => 350, :required => true

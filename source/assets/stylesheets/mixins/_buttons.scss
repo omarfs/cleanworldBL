@@ -29,7 +29,7 @@ $button-disabled-opacity: .5;
 
 }
 
-@mixin button($button-background-color: $primary, $button-text-color: $white, $button-hover-background-color: darken($primary,15%), $button-hover-text-color: $white) {
+@mixin button($button-background-color: $rgba-primary-0, $button-text-color: $rgba-secondary-2-4, $button-hover-background-color: darken($rgba-primary-0,5%), $button-hover-text-color: darken($rgba-secondary-2-4,5%)) {
   @include trailing-hovers;
   @include button-reset;
   @include rounded-corners;
@@ -60,7 +60,7 @@ $button-disabled-opacity: .5;
 
   border: none;
   background-color: $button-background-color;
-  color: $button-text-color;
+  color: $rgba-secondary-2-3;
 
   &:focus {
     outline: none;
@@ -70,6 +70,7 @@ $button-disabled-opacity: .5;
   &:active, &.is-active {
     color: $button-hover-text-color;
     background-color: $button-hover-background-color;
+    line-height: 60px;
   }
 
   &:disabled,

@@ -4,13 +4,19 @@
 //bourbon, neat & bitters
 @import "normalize/normalize";
 @import "bourbon/bourbon";
-@import "bitters/grid-settings";
+//@import "bitters/grid-settings";
 @import "neat/neat";
 @import "bitters/base";
-
+@import "flickity/flickity";
 @import "font-awesome";
 
 @import "mixins/containers";
 @import "mixins/module";
+@import "mixins/common";
+@import "mixins/trailing-hovers";
+@import "mixins/rounded-corners";
+@import "mixins/buttons";
+
 // add site styles from "site" folder
-@import "site/site"
+@import "site/site";
+@import "site/modules/my-modules";
