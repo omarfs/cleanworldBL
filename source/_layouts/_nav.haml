@@ -1,11 +1,8 @@
 %nav.site-nav{ :role => 'navigation'}
-  = link_to '/', class: 'navbar-brand' do
-    %i.fa.fa-leaf.fa-2x
-  .nav-links
-    = link_to 'Home', '/'
-    = link_to 'About', '/about/'
-    = link_to 'Services', '/services/'
-    = link_to 'Contact', '/contact'
-
   .mobile-menu
     %i.fa.fa-navicon
+  .nav-links
+    = link_to 'Home', '/'
+    = link_to 'About', 'about/'
+    = link_to 'Services', 'services/'
+    = link_to 'Contact', 'contact'

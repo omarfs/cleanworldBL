@@ -22,8 +22,6 @@ body{
 .site-nav{
 	@include outer-container;
 	position: relative;
-	.navbar-brand{
-	}
 	.nav-links{
 		display: inline-block;
 		font: 400 1.2em/2em 'Oswald', sans-serif;
@@ -42,6 +40,7 @@ body{
 	}
 	.mobile-menu{
 		display: inline-block;
+		display: none;
 		float: right;
 		i{
 			text-align: center;
@@ -68,29 +67,26 @@ body{
 		}
 	}
 }
-
-.hero{
+.home-hero{
 	@include fullbleed;
-	$hero-background-top: transparentize($rgba-secondary-2-3,1);
-	$hero-background-bottom: transparentize($rgba-secondary-2-4,0.90);
-	$gradient-angle: 0deg;
-	$hero-image: '../images/livingRoom03.jpg';
-	@include background( linear-gradient($gradient-angle, $hero-background-top, $hero-background-bottom), url($hero-image), no-repeat scroll);
-	background-size: cover;
 	padding: 4em 0em;
-	height: 100vh;
+	h2, p{
+		position:relative;
+		text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
+	}
 	.hero-inner{
 		@include container;
 		@include clearfix;
-		padding: 6em 4em 6em;
+		//background-color: #d2d2d2;
 		margin: 0 auto;
+		padding: 3em 2em 3em;
 		text-align: center;
 		.top-panel{
 			@include span-columns(12);
 			text-align: center;
 			h2{
-				font-size: 4em;
-				line-height: 0.8;
+				font-size: 3em;
+				line-height: 1;
 				color: $rgba-primary-0;
 			}
 		}
@@ -99,26 +95,20 @@ body{
 			@include shift(1);
 			padding-top: 1.5em;
 			.panel-content{
-				@include span-columns(6 of 10);
-				@include shift(1);
 				p {
 					color: white;
-					margin:10px 30px;
 					text-align:center;
-					font-size:2em;
+					font-size:1.5em;
 				}
 			}
 			.cta-bar{
-				@include span-columns(3 of 10);
 				height: 33vh;
-				//padding: 2.5em 0;
 				background-color: #DCDCDC;
 				border-radius: 3px;
-			  border: 1px solid #DCDCDC;
-			  box-shadow: 0 1px 2px darken(#f2f2f2, 10%);
-			  cursor: pointer;
-			  //margin: 0 1em 1.5em 1em;
-			  position: relative;
+				border: 1px solid #DCDCDC;
+				box-shadow: 0 1px 2px darken(#f2f2f2, 10%);
+				cursor: pointer;
+				position: relative;
 				overflow: hidden;
 				.cta-item{
 					display: inline-block;
@@ -128,7 +118,6 @@ body{
 					color: $rgba-secondary-2-4;
 					font-size: 1.2em;
 				}
-
 				.cta-button{
 					width: 100%;
 					@include transition (all 0.2s ease-in-out);
@@ -136,13 +125,38 @@ body{
 				}
 			}
 		}
-		h2, p{
-			position:relative;
-			text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
-		}
-		.gallery-container{
-		}
 	}
+	@include media(min-width 860px){
+		.hero-inner{
+			padding: 6em 4em 6em;
+			.top-panel{
+				h2{
+					font-size: 4em;
+					line-height: 0.9;
+				}
+			}
+			.bottom-panel{
+				.panel-content{
+					@include span-columns(6 of 10);
+					p{
+						font-size: 2em;
+					}
+				}
+				.cta-bar{
+					@include span-columns(4 of 10);
+				}
+			}
+		}
+		}
+}
+
+.hero{
+	$hero-background-top: transparentize($rgba-secondary-2-3,1);
+	$hero-background-bottom: transparentize($rgba-secondary-2-4,0.90);
+	$gradient-angle: 0deg;
+	$hero-image: '../images/livingRoom03.jpg';
+	@include background( linear-gradient($gradient-angle, $hero-background-top, $hero-background-bottom), url($hero-image), no-repeat scroll);
+	background-size: cover;
 }
 //
 .site-footer{
@@ -215,15 +229,17 @@ body{
 		position: relative;
 
 		.about-content {
+			//background-color: gray;
 			position: relative;
 			width: 100%;
-			height: 250px;
+			//height: 340px;
 			p {
 				@extend %first-letter;
 				display: none;
-				//color: $rgba-secondary-2-4;
 				color: #4d4d4d;
-				position: absolute;
+				//position: absolute;
+				font-size: 1.2em;
+				text-align: justify;
 			}
 			.is-active{
 				display: block;
@@ -232,9 +248,11 @@ body{
 		}
 		@media screen and (min-width: 850px){
 			.about-content{
+				//height: 250px;
 				padding: 2em 2em;
-				font-size: 1.5em;
-				//vertical-align: middle;
+				p{
+					line-height: 1.7;
+				}
 			}
 		}
 	}
@@ -250,38 +268,35 @@ body{
 	.services-wrapper{
 		@include outer-container;
 		padding: 4em 0;
-	}
-	.services-header{
-		@include span-columns(10);
-		@include shift(1);
-		//@include clearfix;
-		padding: 1em 0;
-		font-size: 2em;
-	}
-	.services-content{
-		@include span-columns(10);
-		@include shift(1);
-		//@include clearfix;
-		//padding: 1.5em 0 1.5em 0;
-	}
-	.services-footer{
-		@include span-columns(6);
-		@include shift(4);
-		//to vertically align children
-		//set line-height to the tallest child
-		padding: 1em 0;
-		//line-height: 2.5em;
-		p{
-			display: inline-block;
-			//or set vertical align middle on each child
-			vertical-align: middle;
-			margin: 0 auto;
+		text-align: center;
+		.services-header, .services-content, .services-footer{
+			@include span-columns(10);
+			@include shift(1);
+			padding: 1em 0;
 		}
-		.services-button{
-			display: inline-block;
-			//or set vertical align middle on each child
-			vertical-align: middle;
-			padding: 0 1.5em 0;
+	}
+	@include media(860px){
+		.services-wrapper{
+			.services-header{
+				font-size: 2em;
+			}
+			.services-content{
+
+			}
+			.services-footer{
+				@include span-columns(6);
+				@include shift(4);
+				p{
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 auto;
+				}
+				.services-button{
+					display: inline-block;
+					vertical-align: middle;
+					padding: 0 1.5em 0;
+				}
+			}
 		}
 	}
 }

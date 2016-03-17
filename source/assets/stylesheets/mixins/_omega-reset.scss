@@ -4,7 +4,21 @@
 // http://joshfry.me/notes/omega-reset-for-bourbon-neat
 // -------------------------------------------------------------------
 
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
-  &:nth-child(#{$nth}+1) { clear: none }
+//@mixin omega-reset($nth) {
+//  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+//  &:nth-child(#{$nth}+1) { clear: none }
+//}
+
+//
+// Omega Reset Updated by Ryan Scherler to take column context into account
+//
+//http://www.ryanscherler.com/notes/entry/omega-reset-for-bourbon-neat/
+
+@mixin omega-reset($nth, $context: null) {
+  @if $context == null {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  } @else {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter($context); }
+  }
+  &:nth-child(#{$nth}+1) { clear: none; }
 }
