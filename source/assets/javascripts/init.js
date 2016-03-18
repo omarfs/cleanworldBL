@@ -20,22 +20,46 @@ var removeClass = function(elem, className){
 
 if ('querySelector' in document && 'addEventListener' in window){
 
-	var siteNav = document.querySelector('.site-nav'),
-			heroBottom = document.querySelector('.bottom-panel'),
-			heroTop = document.querySelector('.top-panel'),
-			bottomChildren = heroBottom.children,
-			topChildren = heroTop.children,
+	var body = document.querySelector('body'),
+			siteNav = document.querySelector('.site-nav'),
+			panelBottom = document.querySelector('.bottom-panel'),
+			panelTop = document.querySelector('.top-panel'),
+			bottomChildren = panelBottom.children,
+			topChildren = panelTop.children,
+			ticking = false,
 		tl = new TimelineMax({
 			paused:true//,
 			//repeat:-1
 		});
 
-		console.log(heroTop);
-		console.log(topChildren);
+	document.addEventListener('scroll', function(e){
+		var scrollTop = (document.documentElement.scrollTop||document.body.scrollTop),
+				headerHeight = document.querySelector('.site-header').offsetHeight;
 
-		tl.from(siteNav,0.75,{yPercent:-100,opacity:0,ease:Circ.easeOut})
-			.from(topChildren[0], 0.5, {xPercent:25,opacity:0},"-=0.25")
-			.from(bottomChildren[0], 0.8, {top:50, opacity:0}, "+=0.5")
-			.play();
+		if (!ticking) {
+			if (scrollTop > 5){
+				ticking = true;
+				addClass(body,'scrolling');
+				TweenMax.to(siteNav, 2, {opacity: 0});
+				console.log(ticking);
+			}
+		} else {
+			if (scrollTop < 5){
+				removeClass(body,'scrolling');
+				ticking = false;
+				TweenMax.to(siteNav, 2, {opacity: 1});
+				console.log(ticking);
+			}
+		}
+	});
+
+	// animations
+
+	//console.log(heroTop);
+	//console.log(topChildren);
+	tl.from(siteNav,0.75,{yPercent:-100,opacity:0,ease:Circ.easeOut})
+		.from(topChildren[0], 0.5, {xPercent:25,opacity:0},"-=0.25")
+		.from(bottomChildren[0], 0.8, {top:50, opacity:0}, "+=0.5")
+		.play();
 
 }

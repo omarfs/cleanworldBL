@@ -1,4 +1,5 @@
 site:
+  brand: 'Clean World Better Living'
   domain: 'http://##########.org'
   tracking_code: '##########'
   tracking_view: '#################'
