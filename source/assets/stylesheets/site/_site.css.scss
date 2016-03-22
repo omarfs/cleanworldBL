@@ -11,7 +11,7 @@ body{
 }
 .site-header{
 	@include fullbleed;
-	background-color: #4d4d4d;
+	//background-color: #4d4d4d;
 	padding: 1em 0.5em 1em;
 	position: fixed;
 	z-index: 3;
@@ -24,16 +24,10 @@ body{
 	position: relative;
 	.mobile-menu{
 		position: fixed;
-		//display: inline-block;
-		//top: 0;
 		height: 2.2em;
 		width: 2.2em;
-		//display: none;
-		//float: right;
 		i{
 			text-align: center;
-			//display: table-cell;
-			//vertical-align: middle;
 			height: 100%;
 			width: 100%;
 			font-size: 1.3em;
@@ -41,10 +35,6 @@ body{
 			border-radius: 100%;
 			border-width: 2px;
 			border-style: solid;
-			border-color: $rgba-primary-0;
-			color: $rgba-primary-0;
-			//border-color: white;
-			//color: white;
 			&:hover {
 				cursor: pointer;
 				border-color: shade($action-color, 25%);
@@ -58,7 +48,6 @@ body{
 		display: inline-block;
 		display: none;
 		font: 400 1.2em/2em 'Oswald', sans-serif;
-		//float:right;
 		padding: 0em 1.5em 0em;
 
 		a{
@@ -75,46 +64,57 @@ body{
 		display: inline-block;
 		float: right;
 		padding: 0em 1em;
-		font-size: 1.4em;
-		color: $rgba-secondary-2-4;
 	}
 }
 .site-footer{
 	@include fullbleed;
-	background-color: #4d4d4d;
 	.footer-container{
 		@include outer-container;
 		padding: 1em 0;
+		text-align: center;
 		.footer-primary-links{
-			@include span-columns(6);
-			padding-top: 1em;
+
 		}
 		.footer-social{
-			@include span-columns(6);
-			@include omega();
 			padding-top: 1em;
-			text-align: right;
 			span {
 				display: none;
 			}
 			a{
-				border-color: transparent;
+			//	border-color: transparent;
 			}
 		}
 		.footer-legal{
-			@include span-columns(12);
 			padding-top: 1em;
 			p{
-				color: #d2d2d2;
+				//color: #d2d2d2;
 				font-size: 0.8em;
 				letter-spacing: 0.05em;
+			}
+		}
+	}
+	@include media(860px){
+		.footer-container{
+			.footer-primary-links{
+				@include span-columns(6);
+				padding-top: 1em;
+
+			}
+			.footer-social{
+				@include span-columns(6);
+				@include omega();
+				text-align: right;
+
+			}
+			.footer-legal{
+				@include span-columns(12);
+
 			}
 		}
 	}
 }
 //
 .social-icons, .site-links{
-	padding: 0.5em 0;
 	li {
 		display: inline;
 		margin-right: 1.5em;
@@ -123,16 +123,11 @@ body{
 		}
 		a {
 			display: inline-block;
-			font-size: 1.2em;
 			padding: 0.5em;
-			text-align: center;
-			border-left: 2px solid $rgba-secondary-2-3;
-			color: #d2d2d2;
+			border-radius: 10px;
 			@include transition(all 0.1s ease);
 			&:hover {
-				color: $rgba-primary-0;
-				color: white;
-				background-color: $rgba-secondary-2-3;
+
 			}
 		}
 	}
@@ -148,7 +143,6 @@ body{
 	.hero-inner{
 		@include container;
 		@include clearfix;
-		//background-color: #d2d2d2;
 		margin: 0 auto;
 		padding: 3em 2em 3em;
 		text-align: center;
@@ -156,9 +150,6 @@ body{
 			@include span-columns(12);
 			text-align: center;
 			h2{
-				font-size: 3em;
-				line-height: 1;
-				color: $rgba-primary-0;
 			}
 		}
 		.bottom-panel{
@@ -167,14 +158,11 @@ body{
 			padding-top: 1.5em;
 			.panel-content{
 				p {
-					color: white;
 					text-align:center;
-					font-size:1.5em;
 				}
 			}
 			.cta-bar{
 				height: 33vh;
-				background-color: #DCDCDC;
 				border-radius: 3px;
 				border: 1px solid #DCDCDC;
 				box-shadow: 0 1px 2px darken(#f2f2f2, 10%);
@@ -186,8 +174,6 @@ body{
 					height: 100%;
 				}
 				.cta-text{
-					color: $rgba-secondary-2-4;
-					font-size: 1.2em;
 				}
 				.cta-button{
 					width: 100%;
@@ -202,15 +188,12 @@ body{
 			padding: 6em 4em 6em;
 			.top-panel{
 				h2{
-					font-size: 4em;
-					line-height: 0.9;
 				}
 			}
 			.bottom-panel{
 				.panel-content{
 					@include span-columns(6 of 10);
 					p{
-						font-size: 2em;
 					}
 				}
 				.cta-bar{
@@ -234,36 +217,27 @@ body{
 .about {
 	@include fullbleed;
 	@include clearfix;
-	background-color: lighten(#D2D2D2,15%);
 	padding: 4em 0;
 	section{
 		@include container--text;
 		position: relative;
 
 		.about-content {
-			//background-color: gray;
 			position: relative;
 			width: 100%;
-			//height: 340px;
 			p {
 				@extend %first-letter;
 				display: none;
-				color: #4d4d4d;
-				//position: absolute;
-				font-size: 1.2em;
 				text-align: justify;
 			}
 			.is-active{
 				display: block;
-				//position: absolute;
 			}
 		}
 		@media screen and (min-width: 850px){
 			.about-content{
-				//height: 250px;
 				padding: 2em 2em;
 				p{
-					line-height: 1.7;
 				}
 			}
 		}
@@ -272,10 +246,7 @@ body{
 
 .home-services{
 	@include fullbleed;
-	background-color: #4D4D4D;
-	color: white;
 	i{
-		color: $rgba-primary-0;
 	}
 	.services-wrapper{
 		@include outer-container;
@@ -290,7 +261,7 @@ body{
 	@include media(860px){
 		.services-wrapper{
 			.services-header{
-				font-size: 2em;
+				//font-size: 2em;
 			}
 			.services-content{
 
@@ -316,7 +287,6 @@ body{
 	@include clearfix;
 	@include transition (all 0.2s ease-in-out);
 	text-decoration: none;
-	//background-color: lighten($rgba-secondary-2-4,70%);
 	section {
 		@include outer-container;
 		padding: 4em 0em;
@@ -328,17 +298,10 @@ body{
 
 		}
 		h2{
-			font-size: 1.5em;
-			color: white;
-			color: $rgba-secondary-2-4;
 			text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
-			//color: #4d4d4d;
 		}
 		p{
 			display: none;
-			font-size: 1.2em;
-			color: #4d4d4d;
-			color: $rgba-secondary-2-4;
 			text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
 		}
 		.is-active{
@@ -365,13 +328,11 @@ body{
 }
 .clients-blockquote{
 	@include fullbleed;
-	background-color: #d2d2d2;
 
 	#slider-wrapper {
 		@include outer-container;
 	  //width: 100%;
 	  height: 400px;
-	  //background-color: #333;
 	  padding: 0px;
 	  margin: 0 0 10px 0;
 		margin: 0 auto;
@@ -391,22 +352,16 @@ body{
 	  position: absolute;
 	  width: 100%;
 	  height: 400px;
-		background-color: #d2d2d2;
 	  overflow: hidden;
 	  opacity: 1;
 	  text-align: center;
+		background-color: white;
 		p{
 			@extend %first-letter;
-			font-size: 1.4em;
-			color: $rgba-primary-1;
-			color: #4d4d4d;
 		}
 		h2{
-			color: $rgba-secondary-2-4;
-			font-size: 1.1em;
 		}
 		span{
-			color: $rgba-primary-4;
 		}
 	}
 
@@ -415,7 +370,6 @@ body{
 		position: relative;
 		top: 50%;
     transform: translateY(-50%);
-		color: #4d4d4d;
 	}
 
 	#progressBar {
@@ -425,13 +379,11 @@ body{
 	  z-index: 1000;
 	  width: 100%;
 	  height: 5px;
-	  background: rgba(255, 255, 255, 0.6);
 	}
 }
 
 .contact{
 	@include fullbleed;
-	background-color: white;
 	.content{
 		@include outer-container;
 		padding: 6em 2em;
