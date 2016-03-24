@@ -24,6 +24,7 @@ if ('querySelector' in document && 'addEventListener' in window){
 			siteNav = document.querySelector('.site-nav'),
 			panelBottom = document.querySelector('.bottom-panel'),
 			panelTop = document.querySelector('.top-panel'),
+			menuButton = document.querySelector('.mobile-menu'),
 			bottomChildren = panelBottom.children,
 			topChildren = panelTop.children,
 			ticking = false,
@@ -53,6 +54,12 @@ if ('querySelector' in document && 'addEventListener' in window){
 		}
 	});
 
+	menuButton.addEventListener('click', function(){
+		alert('clicked');
+		var menuLinks = document.querySelector('.nav-links');
+		console.log(menuLinks);
+		TweenMax.to(menuLinks,1,{autoAlpha:1,display:'block'});
+	});
 	// animations
 
 	//console.log(heroTop);
