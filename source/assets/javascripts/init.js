@@ -54,12 +54,7 @@ if ('querySelector' in document && 'addEventListener' in window){
 		}
 	});
 
-	menuButton.addEventListener('click', function(){
-		alert('clicked');
-		var menuLinks = document.querySelector('.nav-links');
-		console.log(menuLinks);
-		TweenMax.to(menuLinks,1,{autoAlpha:1,display:'block'});
-	});
+	navController.init();
 	// animations
 
 	//console.log(heroTop);

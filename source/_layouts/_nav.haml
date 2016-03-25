@@ -1,9 +1,9 @@
 %nav.site-nav{ :role => 'navigation'}
-  .mobile-menu
+  .mobile-menu{ :'data-nav-id' => 'main-nav'}
     %i.fa.fa-navicon
   .brand
     = data.settings.site.brand
-  %ul.nav-links
+  %ul#main-nav.nav-links
     %li
       = link_to 'Home', '/'
     %li
