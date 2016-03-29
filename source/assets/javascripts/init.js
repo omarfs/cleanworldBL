@@ -22,11 +22,11 @@ if ('querySelector' in document && 'addEventListener' in window){
 
 	var body = document.querySelector('body'),
 			siteNav = document.querySelector('.site-nav'),
-			panelBottom = document.querySelector('.bottom-panel'),
+			/*panelBottom = document.querySelector('.bottom-panel'),
 			panelTop = document.querySelector('.top-panel'),
 			menuButton = document.querySelector('.mobile-menu'),
 			bottomChildren = panelBottom.children,
-			topChildren = panelTop.children,
+			topChildren = panelTop.children, */
 			ticking = false,
 		tl = new TimelineMax({
 			paused:true//,
@@ -53,15 +53,15 @@ if ('querySelector' in document && 'addEventListener' in window){
 			}
 		}
 	});
-
+	TweenMax.from(body,0.8,{opacity:0});
 	navController.init();
 	// animations
 
 	//console.log(heroTop);
 	//console.log(topChildren);
-	tl.from(siteNav,0.75,{yPercent:-100,opacity:0,ease:Circ.easeOut})
+	/*tl.from(siteNav,0.75,{yPercent:-100,opacity:0,ease:Circ.easeOut})
 		.from(topChildren[0], 0.5, {xPercent:25,opacity:0},"-=0.25")
 		.from(bottomChildren[0], 0.8, {top:50, opacity:0}, "+=0.5")
-		.play();
+		.play();*/
 
 }

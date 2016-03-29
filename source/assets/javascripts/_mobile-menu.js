@@ -8,12 +8,16 @@ var navController = {
     visible: {
       display: 'block',
       autoAlpha: 1,
-      height: 0
+      height: 0,
+      rotationX: 0,
+      transformOrigin: "center center"
     },
     hidden: {
       display: 'none',
       autoAlpha: 0,
-      height: 0
+      height: 0,
+      rotationX: -90,
+      transformOrigin: "center center"
     }
   },
 
@@ -50,7 +54,7 @@ var navController = {
       trigger.classList.add(_nc.classes.active);
       TweenLite.fromTo(xNav, _nc.animate.duration, _nc.animate.hidden, _nc.animate.visible);
     } else {
-      //alert('is close');
+      //alert('is closed');
       trigger.classList.remove(_nc.classes.active);
       TweenLite.fromTo(xNav, _nc.animate.duration, _nc.animate.visible, _nc.animate.hidden);
     }

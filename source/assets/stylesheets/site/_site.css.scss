@@ -11,7 +11,7 @@ body{
 }
 .site-header{
 	@include fullbleed;
-	background-color: white;
+	background-color: $rgba-primary-0;
 	padding: 1em 0.5em 1em;
 	position: relative;
 }
@@ -53,15 +53,15 @@ body{
 }
 .site-footer{
 	@include fullbleed;
-	.footer-container{
+	.container{
 		@include outer-container;
 		padding: 1em 0;
 		text-align: center;
-		.footer-primary-links{
-
+		.primary-links, .social, .copy{
+			border-top: 2px inset #d2d2d2;
 		}
-		.footer-social{
-			padding-top: 1em;
+		.social{
+			//padding-top: 1em;
 			span {
 				display: none;
 			}
@@ -69,7 +69,7 @@ body{
 			//	border-color: transparent;
 			}
 		}
-		.footer-legal{
+		.copy{
 			padding-top: 1em;
 			p{
 				//color: #d2d2d2;
@@ -118,75 +118,25 @@ body{
 	}
 }
 //
-.home-hero{
+.home{
 	@include fullbleed;
 	padding: 4em 0em;
 	h2, p{
 		position:relative;
 		text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
 	}
-	.hero-inner{
-		@include container;
+	section{
+		@include outer-container;
 		@include clearfix;
 		margin: 0 auto;
 		padding: 3em 2em 3em;
 		text-align: center;
-		.top-panel{
+		header{
 			@include span-columns(12);
-			text-align: center;
-			h2{
-			}
-		}
-		.bottom-panel{
-			@include span-columns(10);
-			@include shift(1);
-			padding-top: 1.5em;
-			.panel-content{
-				p {
-					text-align:center;
-				}
-			}
-			.cta-bar{
-				height: 33vh;
-				border-radius: 3px;
-				border: 1px solid #DCDCDC;
-				box-shadow: 0 1px 2px darken(#f2f2f2, 10%);
-				cursor: pointer;
-				position: relative;
-				overflow: hidden;
-				.cta-item{
-					display: inline-block;
-					height: 100%;
-				}
-				.cta-text{
-				}
-				.cta-button{
-					width: 100%;
-					@include transition (all 0.2s ease-in-out);
-
-				}
-			}
 		}
 	}
 	@include media(min-width 860px){
-		.hero-inner{
-			padding: 6em 4em 6em;
-			.top-panel{
-				h2{
-				}
-			}
-			.bottom-panel{
-				.panel-content{
-					@include span-columns(6 of 10);
-					p{
-					}
-				}
-				.cta-bar{
-					@include span-columns(4 of 10);
-				}
-			}
-		}
-		}
+	}	
 }
 
 .hero{
@@ -206,82 +156,48 @@ body{
 	section{
 		@include container--text;
 		position: relative;
-
-		.about-content {
-			position: relative;
-			width: 100%;
-			p {
-				@extend %first-letter;
-				display: none;
-				text-align: justify;
-			}
-			.is-active{
-				display: block;
-			}
+		p {
+			@extend %first-letter;
+			//display: none;
+			text-align: justify;
+		}
+		.is-active{
+			display: block;
 		}
 		@media screen and (min-width: 850px){
-			.about-content{
-				padding: 2em 2em;
-				p{
-				}
+			p{
+
 			}
 		}
 	}
 }
 
-.home-services{
+.services{
 	@include fullbleed;
 	i{
 	}
-	.services-wrapper{
+	section{
 		@include outer-container;
 		padding: 4em 0;
 		text-align: center;
-		.services-header, .services-content, .services-footer{
+		header, .content, .services-cta{
 			@include span-columns(10);
 			@include shift(1);
 			padding: 1em 0;
 		}
 	}
 	@include media(860px){
-		.services-wrapper{
-			.services-header{
-				//font-size: 2em;
-			}
-			.services-content{
 
-			}
-			.services-footer{
-				@include span-columns(6);
-				@include shift(4);
-				p{
-					display: inline-block;
-					vertical-align: middle;
-					margin: 0 auto;
-				}
-				.services-button{
-					display: inline-block;
-					vertical-align: middle;
-					padding: 0 1.5em 0;
-				}
-			}
-		}
 	}
 }
-.home-banner{
+.banner{
 	@include clearfix;
 	@include transition (all 0.2s ease-in-out);
 	text-decoration: none;
 	section {
-		@include outer-container;
+		@include container--super-narrow;
 		padding: 4em 0em;
 		text-align: center;
-		.banner-text, .banner-cta {
-			@include span-columns(10);
-			@include shift(1);
-			padding: 1em 0;
-
-		}
 		h2{
 			text-shadow:4px 4px 8px rgba(0, 0, 0, 0.2);
 		}
@@ -293,21 +209,13 @@ body{
 			display: block;
 			margin: 0 auto;
 		}
-		.button{
-			@include button;
-			margin: 0 auto;
+		.banner-cta{
+			//@include button;
+			//margin: 0 auto;
 		}
 	}
 	@include media(860px){
 		section{
-			.banner-text{
-				@include span-columns(5);
-				@include shift(2);
-				//@include omega;
-			}
-			.banner-cta{
-				@include span-columns(3);
-			}
 		}
 	}
 }
