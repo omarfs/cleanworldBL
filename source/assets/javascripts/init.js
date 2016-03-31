@@ -53,6 +53,7 @@ if ('querySelector' in document && 'addEventListener' in window){
 			}
 		}
 	});
+	//TweenMax.set('.nav-links',{visibility:'hidden'});
 	TweenMax.from(body,0.8,{opacity:0});
 	navController.init();
 	// animations

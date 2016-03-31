@@ -8,16 +8,12 @@ var navController = {
     visible: {
       display: 'block',
       autoAlpha: 1,
-      height: 0,
-      rotationX: 0,
-      transformOrigin: "center center"
+      height: 0
     },
     hidden: {
       display: 'none',
       autoAlpha: 0,
-      height: 0,
-      rotationX: -90,
-      transformOrigin: "center center"
+      height: 0
     }
   },
 
