@@ -1,13 +1,13 @@
 %footer.site-footer{ :role => 'contentinfo'}
-  .container
-    .primary-links
-      %ul.site-links
+  %section
+    .site-links
+      %ul
         - ['About','Services', 'Contact'].each do |menu|
           %li
             %a{:href => 'javascript:void(0)'}
               %span=menu
-    .social
-      %ul.social-icons
+    .social-links
+      %ul
         - data.settings.services.each do |service_name, service_link|
           %li
             = link_to service_link do

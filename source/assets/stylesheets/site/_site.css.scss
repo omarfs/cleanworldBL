@@ -53,24 +53,25 @@ body{
 }
 .site-footer{
 	@include fullbleed;
-	.container{
+	section{
 		@include outer-container;
-		padding: 1em 0;
 		text-align: center;
-		.primary-links, .social, .copy{
-			border-top: 2px inset #d2d2d2;
+		padding: 1em 0;
+
+		li {
+			display: inline;
+			margin-right: 1.5em;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
-		.social{
-			//padding-top: 1em;
+
+		.social-links{
 			span {
 				display: none;
 			}
-			a{
-			//	border-color: transparent;
-			}
 		}
 		.copy{
-			padding-top: 1em;
 			p{
 				//color: #d2d2d2;
 				font-size: 0.8em;
@@ -79,40 +80,16 @@ body{
 		}
 	}
 	@include media(860px){
-		.footer-container{
-			.footer-primary-links{
-				@include span-columns(6);
-				padding-top: 1em;
-
+		section{
+			.site-links{
+				@include span-columns(4);
 			}
-			.footer-social{
-				@include span-columns(6);
+			.social-links{
+				@include span-columns(4);
+			}
+			.copy{
+				@include span-columns(4);
 				@include omega();
-				text-align: right;
-
-			}
-			.footer-legal{
-				@include span-columns(12);
-
-			}
-		}
-	}
-}
-//
-.social-icons, .site-links{
-	li {
-		display: inline;
-		margin-right: 1.5em;
-		&:last-child {
-			margin-right: 0;
-		}
-		a {
-			display: inline-block;
-			padding: 0.5em;
-			border-radius: 10px;
-			@include transition(all 0.1s ease);
-			&:hover {
-
 			}
 		}
 	}
@@ -136,7 +113,7 @@ body{
 		}
 	}
 	@include media(min-width 860px){
-	}	
+	}
 }
 
 .hero{
@@ -144,8 +121,11 @@ body{
 	$hero-background-bottom: transparentize($rgba-secondary-2-4,0.90);
 	$gradient-angle: 0deg;
 	$hero-image: '../images/livingRoom03.jpg';
-	@include background( linear-gradient($gradient-angle, $hero-background-top, $hero-background-bottom), url($hero-image), no-repeat scroll);
+	@include background-image(linear-gradient($gradient-angle, $hero-background-top, $hero-background-bottom), url($hero-image));
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
+
 }
 //
 
