@@ -33,7 +33,7 @@ if ('querySelector' in document && 'addEventListener' in window){
 			//repeat:-1
 		});
 
-	document.addEventListener('scroll', function(e){
+	/*document.addEventListener('scroll', function(e){
 		var scrollTop = (document.documentElement.scrollTop||document.body.scrollTop),
 				headerHeight = document.querySelector('.site-header').offsetHeight;
 
@@ -52,7 +52,7 @@ if ('querySelector' in document && 'addEventListener' in window){
 				console.log(ticking);
 			}
 		}
-	});
+	});*/
 	//TweenMax.set('.nav-links',{visibility:'hidden'});
 	TweenMax.from(body,0.8,{opacity:0});
 	navController.init();

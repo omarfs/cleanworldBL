@@ -8,6 +8,7 @@ var navController = {
     visible: {
       display: 'block',
       autoAlpha: 1,
+      //marginTop: -8,
       height: 0
     },
     hidden: {
@@ -39,18 +40,14 @@ var navController = {
         navId = trigger.getAttribute(_nc.attrs.id),
         xNav = document.getElementById(navId);
 
-    //console.log(xNav);
     e.preventDefault();
     xNav.classList.toggle(_nc.classes.active);
     _nc.animate.visible.height = xNav.offsetHeight;
-    //console.log(_nc.animate.visible.height);
 
     if(_nc.isNavOpen(xNav)){
-      //alert('is open');
       trigger.classList.add(_nc.classes.active);
       TweenLite.fromTo(xNav, _nc.animate.duration, _nc.animate.hidden, _nc.animate.visible);
     } else {
-      //alert('is closed');
       trigger.classList.remove(_nc.classes.active);
       TweenLite.fromTo(xNav, _nc.animate.duration, _nc.animate.visible, _nc.animate.hidden);
     }

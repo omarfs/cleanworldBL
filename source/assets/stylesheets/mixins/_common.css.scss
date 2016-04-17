@@ -1,30 +1,3 @@
-// @extend %first-letter
-$rgba-primary-0: rgba(255,221,  0,1);	// Main Primary color */
-$rgba-primary-1: rgba(255,234, 99,1);
-$rgba-primary-2: rgba(255,228, 57,1);
-$rgba-primary-3: rgba(197,170,  0,1);
-$rgba-primary-4: rgba(155,134,  0,1);
-
-$rgba-secondary-1-0: rgba(255, 89,  0,1);	// Main Secondary color (1) */
-$rgba-secondary-1-1: rgba(255,154, 99,1);
-$rgba-secondary-1-2: rgba(255,126, 57,1);
-$rgba-secondary-1-3: rgba(197, 69,  0,1);
-$rgba-secondary-1-4: rgba(155, 54,  0,1);
-
-$rgba-secondary-2-0: rgba( 52,216,  0,1);	// Main Secondary color (2) */
-$rgba-secondary-2-1: rgba(121,226, 88,1);
-$rgba-secondary-2-2: rgba( 90,219, 49,1);
-$rgba-secondary-2-3: rgba( 40,167,  0,1);
-$rgba-secondary-2-4: rgba( 32,131,  0,1);
-// As RGBa codes */
-
-
-$color-slide-0: #8C2114;
-$color-slide-1: #8A654A;
-$color-slide-2: #8B7322;
-$color-slide-3: #078B74;
-$color-slide-4: #5F818B;
-$color-from-logo: rgba(102, 205, 0, 1);
 // Widths
 $mobile-width: em(480);
 $small-tablet-width: em(720);
@@ -41,6 +14,7 @@ $desktop: new-breakpoint(min-width $desktop-width, 16);
 $small-tablet-down: new-breakpoint(max-width $large-tablet-width, 8);
 $tablet-down: new-breakpoint(max-width $desktop, 8);
 
+// @extend %first-letter
 %first-letter {
   &:first-letter {
     //color: #009B77;
