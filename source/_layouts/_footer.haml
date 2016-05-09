@@ -1,11 +1,5 @@
 %footer.site-footer{ :role => 'contentinfo'}
   %section
-    .site-links
-      %ul
-        - ['About','Services', 'Contact'].each do |menu|
-          %li
-            %a{:href => 'javascript:void(0)'}
-              %span=menu
     .social-links
       %ul
         - data.settings.services.each do |service_name, service_link|
